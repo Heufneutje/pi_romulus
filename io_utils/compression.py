@@ -9,6 +9,7 @@ import os
 import zipfile
 import libarchive.public
 from pyunpack import Archive
+import py7zlib
 
 __author__ = 'arthur'
 
@@ -25,6 +26,7 @@ RUNS_COMPRESSED = [
 class Compression(object):
     def __init__(self, target):
         self.target_dir = target
+        self.file_type = None
 
     def determine_type(self, file_o):
         """
@@ -50,8 +52,15 @@ class Compression(object):
         Extracts contents of 7z file
         :param file_obj: file to be used.
         """
-        for _ in libarchive.public.file_pour(file_obj):
-            continue
+        fp = open(file_obj, 'rb')
+        archive = py7zlib.Archive7z(fp)
+        for filename in archive.getnames():
+            outfilename = os.path.join(self.target_dir, filename)
+            if not os.path.exists(self.target_dir):
+                os.makedirs(self.target_dir)
+            outfile = open(outfilename, 'wb')
+            outfile.write(archive.getmember(filename).read())
+            outfile.close()
 
     def unrar(self, file_obj):
         """
