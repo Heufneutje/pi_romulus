@@ -3,6 +3,11 @@
 [![Code Health](https://landscape.io/github/ArthurMoore85/pi_romulus/master/landscape.svg?style=flat)](https://landscape.io/github/ArthurMoore85/pi_romulus/master)
 [![Build Status](https://travis-ci.org/ArthurMoore85/pi_romulus.svg?branch=master)](https://travis-ci.org/ArthurMoore85/pi_romulus)
 
+**NOTE
+Development of Pi Romulus is done [at GitLab](https://gitlab.com/arthurmoore85/pi_romulus).**
+
+**This repository will be kept up to date with releases from Pi Romulus, but only with releases and not during active development. For development versions, please visit the Gitlab page.**
+
 Retropie ROM downloader
 
 Based on Romulus, the Linux Retropie ROM manager, Pi Romulus is intended to fill a gaping hole
@@ -26,9 +31,13 @@ For it's GUI framework it makes use of the excellent npyscreen library.
 
 Installation
 ------------
-Clone this app into a folder on your Retropie. If it isnt already installed, install pip and libarchive: `sudo apt-get install python-pip libarchive-dev`.
-After this, install all the requirements with `pip install -r requirements.txt`
-Once completed, run `python romulus.py` to start the app, or create a shortcut.
+
+* git clone https://github.com/ArthurMoore85/pi_romulus
+* cd pi_romulus
+* sudo apt-get install python-pip libarchive-dev
+* sudo pip install -r requirements.txt
+* python romulus.py
+
 
 Developers
 ----------
