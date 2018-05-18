@@ -9,7 +9,6 @@ import os
 import zipfile
 import libarchive.public
 from pyunpack import Archive
-import py7zlib
 
 __author__ = 'arthur'
 

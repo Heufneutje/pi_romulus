@@ -58,7 +58,7 @@ class EmuApi(Api):
         """
         r = requests.get(url)
         data = r.text
-        return BeautifulSoup(data)
+        return BeautifulSoup(data, 'html.parser')
 
     def get_next_url(self, page):
         """

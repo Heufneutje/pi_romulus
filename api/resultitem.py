@@ -34,7 +34,7 @@ SYSTEMS = {
     'Nintendo Game Boy Color': 'gbc', 'Nintendo Gameboy Advance': 'gba', 'PC Engine - TurboGrafx16': 'pcengine',
     'PSP': 'psp', 'Sega 32X': 'sega32x', 'Sega CD': 'segacd', 'Sega Game Gear': 'gamegear',
     'Sega Genesis - Sega Megadrive': 'megadrive', 'Sega Master System': 'mastersystem', 'Sony Playstation': 'psx',
-    'Super Nintendo Entertainment System': 'snes', 'ZX Spectrum': 'zxspectrum'
+    'Super Nintendo Entertainment System': 'snes', 'ZX Spectrum': 'zxspectrum', 'Sega Dreamcast': 'dreamcast'
 }
 
 
