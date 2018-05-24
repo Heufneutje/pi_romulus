@@ -9,6 +9,7 @@ import npyscreen
 
 from api.providers.emuapi import EmuApi
 from io_utils.download import Download
+from io_utils.threads import ThreadDownload
 
 __author__ = 'arthur'
 
@@ -28,11 +29,11 @@ class ResultsForm(npyscreen.ActionForm):
         try:
             selection = self.parentApp.RESULTS[selected_option]
             self.search = self.parentApp.SCRAPER_OBJ
-            self.emu = EmuApi()
-            # self.download_link = self.emu.base_url + selection.download_url
-            self.emu.download(selection)
+            download_thread = ThreadDownload(selection=selection)
+            download_thread.start()
             # self.download_link = self.search.get_link(selection)
-            npyscreen.notify("Please wait while Romulus downloads this ROM...", "Downloading")
+            while download_thread.is_alive():
+                npyscreen.notify("Please wait while Romulus downloads this ROM...", "Downloading")
             # self.d = Download()
             # self.d.download(self.download_link, platform=selection.system)
             npyscreen.notify("The ROM is now available on EmulationStation", "Success")

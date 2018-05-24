@@ -12,7 +12,7 @@ __author__ = 'arthur'
 
 # Switch to True for debugging. Set settings in PyCharm
 # to handle remote debugging on localhost port 5678
-DEBUG = False
+DEBUG = True
 
 
 class App(npyscreen.NPSAppManaged):
@@ -31,8 +31,10 @@ class App(npyscreen.NPSAppManaged):
         Initialize the forms.
         """
         if DEBUG:
-            import pydevd
-            pydevd.settrace('localhost', port=5678, stdoutToServer=True, stderrToServer=True)
+            # Set DEBUG above to True, and you will be able to use remote
+            # debugging for PyCharm and Visual Studio Code.
+            import ptvsd
+            ptvsd.enable_attach("my_secret", address=('localhost', 3000))
         self.addForm('MAIN', SearchForm, name="Search for ROM")
 
 

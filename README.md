@@ -23,6 +23,7 @@ Features:
 * Automatic detection of required emulator
 * Automatic ROM extraction, if ROM arrives in an archive
 * Places ROMs in the correct folder for direct playability
+* Download notification
 
 Technical Details
 -----------------
