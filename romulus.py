@@ -12,7 +12,7 @@ __author__ = 'arthur'
 
 # Switch to True for debugging. Set settings in PyCharm
 # to handle remote debugging on localhost port 5678
-DEBUG = True
+DEBUG = False
 
 
 class App(npyscreen.NPSAppManaged):
