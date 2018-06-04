@@ -35,7 +35,7 @@ SYSTEMS = {
     'PSP': 'psp', 'Sega 32X': 'sega32x', 'Sega CD': 'segacd', 'Sega Game Gear': 'gamegear',
     'Sega Genesis - Sega Megadrive': 'megadrive', 'Sega Master System': 'mastersystem', 'Sony Playstation': 'psx',
     'Super Nintendo Entertainment System': 'snes', 'ZX Spectrum': 'zxspectrum', 'Sega Dreamcast': 'dreamcast',
-    'Nintendo DS': 'nds',
+    'Nintendo DS': 'nds', 'ScummVM': 'scummvm'
 }
 
 
