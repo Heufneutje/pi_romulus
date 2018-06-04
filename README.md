@@ -8,7 +8,7 @@ Development of Pi Romulus is done [at GitLab](https://gitlab.com/arthurmoore85/p
 
 **This repository will be kept up to date with releases from Pi Romulus, but only with releases and not during active development. For development versions, please visit the Gitlab page.**
 
-Retropie ROM downloader (v.1.2.2)
+Retropie ROM downloader (v.1.2.3)
 
 Based on Romulus, the Linux Retropie ROM manager, Pi Romulus is intended to fill a gaping hole
 in the Retropie functionality.
