@@ -18,7 +18,11 @@ RUNS_COMPRESSED = [
     'atari2600',
     'pcengine',
     'snes',
-    'gba'
+    'gba',
+    'gbc',
+    'gb',
+    'nes',
+    'nds'
 ]
 
 
