@@ -8,6 +8,7 @@
 import os
 import zipfile
 import libarchive.public
+import subprocess
 from pyunpack import Archive
 
 __author__ = 'arthur'
@@ -88,4 +89,12 @@ class Compression(object):
                 self.unzip_seven(f)
             elif t == 'rar':
                 self.unrar(f)
+            elif t == 'ecm':
+                subprocess.call('ecm-uncompress "{}"'.format(file_o))
+
+            for ecm_file in os.listdir(parent_dir):
+                if ecm_file.endswith(".ecm"):
+                    self.extract(ecm_file)
+                    self.clean_up(ecm_file)
+
             self.clean_up(file_o)
