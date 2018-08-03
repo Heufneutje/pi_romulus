@@ -166,3 +166,4 @@ class Api(object):
         #
         ex = Compression(location)
         ex.extract(target_file_name)
+        ex.extract_all_ecm()

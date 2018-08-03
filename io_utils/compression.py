@@ -70,6 +70,15 @@ class Compression(object):
         """
         Archive(file_obj).extractall(self.target_dir)
 
+    def extract_all_ecm(self):
+        """
+        Extracts all ECM files in the target directory.
+        """
+        for ecm_file in os.listdir(self.target_dir):
+            if ecm_file.endswith(".ecm"):
+                full_path = os.path.join(self.target_dir, ecm_file)
+                self.extract(full_path)
+
     def clean_up(self, file_o):
         """
         Cleans redundant archive file.
@@ -90,11 +99,7 @@ class Compression(object):
             elif t == 'rar':
                 self.unrar(f)
             elif t == 'ecm':
-                subprocess.call('ecm-uncompress "{}"'.format(file_o))
-
-            for ecm_file in os.listdir(parent_dir):
-                if ecm_file.endswith(".ecm"):
-                    self.extract(ecm_file)
-                    self.clean_up(ecm_file)
+                with open(os.devnull, 'w') as fnull:
+                    subprocess.call('ecm-uncompress "{}"'.format(file_o), shell=True, stdout=fnull, stderr=subprocess.STDOUT)
 
             self.clean_up(file_o)
